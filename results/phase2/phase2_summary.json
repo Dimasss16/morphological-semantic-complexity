@@ -1,0 +1,53 @@
+{
+  "languages": [
+    "English",
+    "Russian",
+    "Turkish"
+  ],
+  "graph_metrics": {
+    "English": {
+      "n_nodes": 10000,
+      "n_edges": 116313,
+      "density": 0.0023264926492649264,
+      "avg_degree": 23.2626,
+      "std_degree": 14.212594458437207,
+      "avg_clustering": 0.2977238078434407,
+      "n_components": 1
+    },
+    "Russian": {
+      "n_nodes": 10000,
+      "n_edges": 121659,
+      "density": 0.0024334233423342335,
+      "avg_degree": 24.3318,
+      "std_degree": 12.946656277201463,
+      "avg_clustering": 0.34850814644675754,
+      "n_components": 1
+    },
+    "Turkish": {
+      "n_nodes": 10000,
+      "n_edges": 128629,
+      "density": 0.002572837283728373,
+      "avg_degree": 25.7258,
+      "std_degree": 16.014781121201754,
+      "avg_clustering": 0.30551348106947884,
+      "n_components": 1
+    }
+  },
+  "morph_metrics": {
+    "English": {
+      "mean_forms_per_lemma": 1.3430438124519601,
+      "feature_entropy": 3.448263229514137,
+      "feature_diversity": 0.0009268769257746938
+    },
+    "Russian": {
+      "mean_forms_per_lemma": 2.2125611745513867,
+      "feature_entropy": 6.66411880871182,
+      "feature_diversity": 0.005561233180037472
+    },
+    "Turkish": {
+      "mean_forms_per_lemma": 2.3999011776332044,
+      "feature_entropy": 5.006114490516171,
+      "feature_diversity": 0.005914001270917179
+    }
+  }
+}
