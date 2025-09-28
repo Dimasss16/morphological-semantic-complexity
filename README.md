@@ -1,10 +1,9 @@
 # Morphological-Semantic Complexity Analysis
 
-Cross-linguistic study testing the Low-Entropy Conjecture across Turkish, Russian, and English using computational morphology and semantic network analysis.
-
+This is a study of Turkish, Russian, and English testing the Low-Entropy Conjecture using morphological analysis and semantic networks using Wikipedia articles.
 ## Overview
 
-This project investigates whether languages show systematic trade-offs between morphological complexity and semantic organization. We test three hypotheses on Russian, English and Turkish:
+In this project we are looking at whether languages balance morphological complexity with semantic organization (measured different ways at different stages of the research). We test three hypotheses on Russian, English and Turkish:
 
 - H1 (Trade-off): As a language’s inflectional system gets richer (more forms per lemma or higher morphological complexity), the semantic network density decreases.
 - H2 (Compensation): When a language has a higher I-complexity/entropy, meaning its morphology is less predictable, the semantic network shows higher clustering.
@@ -44,27 +43,45 @@ pip install -r requirements.txt
 
 ## Project Structure
 
-```yaml
-morphological-semantic-complexity/
-  notebooks/
-    01_data_preprocessing.ipynb
-    02_morphological_baselines.ipynb
-    03_complexity_networks.ipynb
-    04_correlation_analysis.ipynb
-  outputs/
-    figures/
-      corpus_statistics.png
-      enhanced_semantic_network_analysis.png
-      ttr_curves.png
-  results/
-    phase1/
-    phase2/
-    phase3/
-    .gitignore
-  LICENSE
-  README.md
-  requirements.txt
-  pearl_script.txt
+```bash
+.
+├── LICENSE
+├── [README.md](http://README.md)
+├── data/
+│   ├── processed/
+│   │   ├── clean_text/
+│   │   ├── lemmatized/
+│   │   └── raw_text/
+│   └── raw_corpora/
+├── notebooks/
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_morphological_baselines.ipynb
+│   ├── 03_complexity_networks.ipynb
+│   └── 04_correlation_analysis.ipynb
+├── outputs/
+│   ├── figures/
+│   └── reports/
+├── pearl_script.txt
+├── requirements.txt
+└── results/
+    ├── phase1/
+    │   ├── semantic_baseline/
+    │   └── summary_*.csv
+    ├── phase2/
+    │   ├── comprehensive_analysis.*
+    │   ├── *_metrics.csv
+    │   └── temp_files/
+    └── phase3/
+        ├── embeddings/
+        ├── graphs/
+        │   ├── original/
+        │   └── replicated/
+        │       ├── English/
+        │       ├── Russian/
+        │       └── Turkish/
+        ├── pca_analysis/
+        ├── regression_models/
+        └── visualizations/
 ```
 
 # Research flow
@@ -84,7 +101,7 @@ We ended up with large densities and avg degrees for English and Turkish EN 0.14
 ---
 
 ## Stage 3: Phase 2 - Enhanced Analysis
-Here we took a more principled approach and used 10000 lemmas instead of 1000 surface forms and built kNN graphs with k=15. We also measured morphological complexity with better established metrics such as E/I-complexity.
+Here we took a more principled approach and used 10000 *lemmas* instead of 1000 surface forms and built kNN graphs with k=15. We also measured morphological complexity with better established metrics such as E/I-complexity.
 
 ### Key Metrics
 | Language | E-complexity | I-complexity | Density | Clustering |
@@ -102,7 +119,7 @@ After obtaining reliable metrics we could proceed with the hypotheses testing. H
 
 - **H1 (Trade-off)**: ρ = +1.000, p < 0.001 -> **rejected** (positive not negative!)
 - **H2 (Compensation)**: ρ = +1.000, p < 0.001 -> **supprted** (**I-complexity predicts clustering** -- our main finding)
-- **H3 (Dimensionality)**: ρ = +0.500, p = 0.667 -> **weak** (inconclusive)
+- **H3 (Dimensionality)**: ρ = +0.500, p = 0.667 -> **weak**
 
 ---
 
